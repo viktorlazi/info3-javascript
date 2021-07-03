@@ -1,11 +1,20 @@
 import './Style/body.css';
+import {observer} from 'mobx-react';
 
-function Body() {
+function Body({store}) {
   return (
     <div className="body">
       <div className="changeSlide">
-        <button>Previous</button>
-        <button>Next</button>
+        {
+          store.getActiveSlide() === 0?
+          <span></span>:
+          <button onClick={()=>{store.setSlide(-1)}}>Previous</button>
+        }
+        {
+          store.getActiveSlide() === store.numberOfSlides-1?
+          <span></span>:
+          <button onClick={()=>{store.setSlide(1)}}>Next</button>
+        }
       </div>
       <h1>Pitanje 1</h1>
       <div className="answers">
@@ -16,4 +25,4 @@ function Body() {
     </div>
   )
 }
-export default Body;
+export default observer(Body);

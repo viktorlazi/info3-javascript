@@ -1,6 +1,6 @@
 import {makeAutoObservable} from 'mobx';
 
-export default class BodyStore{
+export default class NavStore{
   numberOfSlides = 0;
   setActiveSlide;
   getActiveSlide;
@@ -10,9 +10,7 @@ export default class BodyStore{
     this.setActiveSlide = setActiveSlide;
     this.getActiveSlide = getActiveSlide;
   }
-  setSlide = (shift) =>{
-    let currentActive = this.getActiveSlide();
-    const nextActive = currentActive += parseInt(shift);
-    this.setActiveSlide(nextActive);
+  setSlide = (x) =>{
+    this.setActiveSlide(parseInt(x));
   } 
 }

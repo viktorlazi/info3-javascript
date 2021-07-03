@@ -1,5 +1,6 @@
 import './App.css';
 import QuizApp from './QuizApp/QuizApp';
+import {observer} from 'mobx-react';
 
 function App() {
   return (
@@ -8,4 +9,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default observer(App);
