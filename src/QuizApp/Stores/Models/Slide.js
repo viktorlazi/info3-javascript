@@ -1,8 +1,11 @@
+import {makeAutoObservable} from 'mobx';
+
 export default class Slide{
   order;
   userChoices = [];
   numberOfAnswers;
   constructor(order){
+    makeAutoObservable(this);
     this.order = order;
     this.setNumberOfAnswersRnd();
   }
@@ -11,14 +14,16 @@ export default class Slide{
     this.numberOfAnswers = rnd;
   }
   getNumberOfAllowedChoices = () =>{
-    return 2 + this.order;
+    return 2 + 1 + this.order;
   }
   toggleChoice = (x) =>{
+    console.log(this.getNumberOfAllowedChoices());
+
     if(this.userChoices.includes(x)){
       this.userChoices = this.userChoices.filter(e=>e!==x);
       return;
     }
-    if(this.userChoices.length > this.getNumberOfAllowedChoices()){
+    if(this.userChoices.length >= this.getNumberOfAllowedChoices()){
       this.alertUser();
       return;
     }

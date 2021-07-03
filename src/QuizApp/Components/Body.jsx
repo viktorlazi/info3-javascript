@@ -6,21 +6,17 @@ function Body({store}) {
     <div className="body">
       <div className="changeSlide">
         {
-          store.getActiveSlide() === 0?
-          <span></span>:
-          <button onClick={()=>{store.setSlide(-1)}}>Previous</button>
+          store.renderPreviousButton()
         }
         {
-          store.getActiveSlide() === store.numberOfSlides-1?
-          <span></span>:
-          <button onClick={()=>{store.setSlide(1)}}>Next</button>
-        }
+          store.renderNextButton()
+        }        
       </div>
-      <h1>Pitanje 1</h1>
+      <h1>Pitanje {store.getActiveSlide()+1}</h1>
       <div className="answers">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
+        {
+          store.renderAnswers()
+        }
       </div>
     </div>
   )

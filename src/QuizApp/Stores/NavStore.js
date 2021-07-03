@@ -13,4 +13,9 @@ export default class NavStore{
   setSlide = (x) =>{
     this.setActiveSlide(parseInt(x));
   } 
+  renderSlideNumbers = () =>{
+    return [...Array(this.numberOfSlides)].map((el, i)=>{
+      return <button className={`${this.getActiveSlide()===i?"active":""}`} onClick={()=>{this.setSlide(i)}}>{i+1}</button>
+    })
+  }
 }

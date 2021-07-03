@@ -5,9 +5,7 @@ function Nav({store}) {
   return (
     <nav>
       {
-        [...Array(store.numberOfSlides)].map((el, i)=>{
-          return <button className={`${store.getActiveSlide()===i?"active":""}`} onClick={()=>{store.setSlide(i)}}>{i}</button>
-        })
+        store.renderSlideNumbers()
       }
       <button>Rješenje</button>
     </nav>

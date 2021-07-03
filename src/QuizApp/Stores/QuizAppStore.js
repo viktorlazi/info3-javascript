@@ -3,6 +3,8 @@ import Slide from './Models/Slide'
 import NavStore from './NavStore';
 import BodyStore from './BodyStore';
 
+const numberOfSlides = 4;
+
 export default class QuizAppStore{
   activeSlide = 0;
   slides = [];
@@ -10,13 +12,22 @@ export default class QuizAppStore{
   bodyStore;
   constructor(){
     makeAutoObservable(this);
-    this.initSlides(4);
-    this.navStore = new NavStore(4, this.setActiveSlide, this.getActiveSlide);
-    this.bodyStore = new BodyStore(4, this.setActiveSlide, this.getActiveSlide);
+    this.initSlides(numberOfSlides);
+    this.navStore = new NavStore(
+      numberOfSlides, 
+      this.setActiveSlide, 
+      this.getActiveSlide
+    );
+    this.bodyStore = new BodyStore(
+      numberOfSlides, 
+      this.setActiveSlide, 
+      this.getActiveSlide, 
+      this.getSlide
+    );
   }
   initSlides = (x) =>{
     for (let i = 0; i < x; i++) {
-      this.slides.push(new Slide(x));      
+      this.slides.push(new Slide(i));
     }
   }
   setActiveSlide = (x) =>{
@@ -24,5 +35,8 @@ export default class QuizAppStore{
   }
   getActiveSlide = () =>{
     return this.activeSlide;
+  }
+  getSlide = (x) =>{
+    return this.slides[x];
   }
 }

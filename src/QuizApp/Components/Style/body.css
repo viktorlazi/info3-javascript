@@ -33,6 +33,9 @@ body .answers button{
   font-size: 2rem;
   border: none;
 }
+body .answers button.active{
+  color: red;  
+}
 
 @media screen and (max-width: 900px) {
   .body{
