@@ -25,7 +25,7 @@ export default class BodyStore{
   }
   renderNextButton = () =>{
     if(this.getActiveSlide() === this.numberOfSlides-1){
-      return <span></span>;
+      return <button onClick={()=>{}}>Result</button>;;
     }
     return <button onClick={()=>{this.setActive(1)}}>Next</button>;
   }
