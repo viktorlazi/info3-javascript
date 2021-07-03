@@ -14,8 +14,7 @@ export default class QuizAppStore{
     makeAutoObservable(this);
     this.initSlides(numberOfSlides);
     this.navStore = new NavStore(
-      numberOfSlides, 
-      this.setActiveSlide, 
+      numberOfSlides,
       this.getActiveSlide
     );
     this.bodyStore = new BodyStore(

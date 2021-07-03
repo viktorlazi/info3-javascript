@@ -14,9 +14,6 @@ nav button{
 nav button.active{
   background-color: rgb(190, 190, 190);
 }
-nav button:hover{
-  background-color: lightgray;
-}
 
 @media screen and (max-width: 900px) {
   nav{
