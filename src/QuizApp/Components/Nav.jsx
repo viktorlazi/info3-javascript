@@ -7,7 +7,6 @@ function Nav({store}) {
       {
         store.renderSlideNumbers()
       }
-      <button>Rješenje</button>
     </nav>
   )
 }

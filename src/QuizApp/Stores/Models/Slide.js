@@ -21,17 +21,13 @@ export default class Slide{
 
     if(this.userChoices.includes(x)){
       this.userChoices = this.userChoices.filter(e=>e!==x);
-      return;
+      return true;
     }
     if(this.userChoices.length >= this.getNumberOfAllowedChoices()){
-      this.alertUser();
-      return;
+      return false;
     }
     this.userChoices.push(x);
     this.userChoices.sort();
-    return;
-  }
-  alertUser = () =>{
-    alert();
+    return true;
   }
 }

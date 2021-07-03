@@ -1,7 +1,7 @@
 import './Style/body.css';
 import {observer} from 'mobx-react';
 
-function Body({store}) {
+function Body({store}) {  
   return (
     <div className="body">
       <div className="changeSlide">
@@ -12,7 +12,14 @@ function Body({store}) {
           store.renderNextButton()
         }        
       </div>
-      <h1>Pitanje {store.getActiveSlide()+1}</h1>
+      <div>
+        {
+          [
+            store.renderQuestionNumber(),
+            store.renderPossibleAnswNum()
+          ]
+        }
+      </div>
       <div className="answers">
         {
           store.renderAnswers()

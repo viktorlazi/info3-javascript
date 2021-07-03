@@ -20,7 +20,7 @@
 .body .changeSlide button:hover{
   background-color: lightgray;
 }
-.body h1{
+.body h1, .body h2{
   text-align: center;
 }
 .body .answers{
@@ -34,7 +34,7 @@ body .answers button{
   border: none;
 }
 body .answers button.active{
-  color: red;  
+  background-color: rgb(168, 168, 168);
 }
 
 @media screen and (max-width: 900px) {
