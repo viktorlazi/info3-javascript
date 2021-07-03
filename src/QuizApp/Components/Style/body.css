@@ -12,9 +12,13 @@
   justify-content: space-between;
 }
 .body .changeSlide button{
+  transition:background-color 0.5s ease;
   padding: 10px;
   border: none;
   font-size: 1.5rem;
+}
+.body .changeSlide button:hover{
+  background-color: lightgray;
 }
 .body h1{
   text-align: center;
