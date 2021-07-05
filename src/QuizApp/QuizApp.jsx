@@ -18,9 +18,7 @@ function QuizApp() {
         <Route path="/results">
           <Results slides={store.slides} />
         </Route>
-      </Router>
-
-      
+      </Router>      
     </div>
   )
 }

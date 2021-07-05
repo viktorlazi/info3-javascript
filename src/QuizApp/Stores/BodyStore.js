@@ -19,9 +19,6 @@ export default class BodyStore{
     const nextActive = currentActive += parseInt(shift);
     this.setActiveSlide(nextActive);
   }
-  seeResults = () =>{
-    
-  }
   renderPreviousButton = () =>{
     if(this.getActiveSlide() === 0){
       return <span></span>;
